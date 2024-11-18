@@ -27,10 +27,11 @@ const Header = () => {
             </div>
             
             <Link to="/profile" className="seller-profile">
-                <span style={{color: "black"}}>Seller's Name</span>
+                <span style={{color: "black"}}>{JSON.parse(localStorage.getItem('user'))?.username || "Login"}</span>
                 <div className="profile-icon-wrapper">
-                <img src="/images/446935890_1596440774260723_2807957032915483812_n.jpg" alt="Profile" className="profile-icon" />
-                </div>      </Link>
+                    <img src={JSON.parse(localStorage.getItem('user'))?.profileImage || "/images/default-profile.jpg"} alt="Profile" className="profile-icon" />
+                </div>
+            </Link>
         </nav>
     );
 }

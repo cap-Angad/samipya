@@ -11,6 +11,8 @@ import Reviews from './components/reviews/Reviews';
 import Notifications from './components/notifications/Notifications';
 import Career from './components/career/Career';
 import Promotions from './components/promotions/Promotions';
+import Login from './components/auth/Login';
+import Signup from './components/auth/Signup';
 
 function App() {
   return (
@@ -29,6 +31,8 @@ function App() {
         <Route path="/Reviews" element={<><Sidebar /><Reviews /></>} />
         <Route path="/Notifications" element={<><Sidebar /><Notifications /></>} />
         <Route path="/Promotion_offers" element={<><Sidebar /><Promotions /></>} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
         <Route path="/*" element = {<div className='container'><h2>error</h2></div>}></Route>
       </Routes>
     </Router>

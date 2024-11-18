@@ -1,17 +1,15 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './Reviews.css';
 
 const Reviews = () => {
-    const reviews = [
-        { id: 1, name: "Person Name", message: "Demo Message...........................", rating: 5, date: "XX-XX-XX" },
-        { id: 2, name: "Person Name", message: "Demo Message...........................", rating: 4, date: "XX-XX-XX" },
-        { id: 3, name: "Person Name", message: "Demo Message...........................", rating: 5, date: "XX-XX-XX" },
-        { id: 4, name: "Person Name", message: "Demo Message...........................", rating: 3, date: "XX-XX-XX" },
-        { id: 5, name: "Person Name", message: "Demo Message...........................", rating: 4, date: "XX-XX-XX" },
-        { id: 6, name: "Person Name", message: "Demo Message...........................", rating: 4, date: "XX-XX-XX" },
-        { id: 7, name: "Person Name", message: "Demo Message...........................", rating: 4, date: "XX-XX-XX" },
-        { id: 8, name: "Person Name", message: "Demo Message...........................", rating: 4, date: "XX-XX-XX" },
-    ];
+    const [reviews, setReviews] = useState([]);
+
+    useEffect(() => {
+        fetch('http://localhost:5000/reviews')
+            .then(response => response.json())
+            .then(data => setReviews(data))
+            .catch(error => console.error('Error fetching reviews:', error));
+    }, []);
 
     const renderStars = (rating) => {
         return [...Array(5)].map((_, index) => (
