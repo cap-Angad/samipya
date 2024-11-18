@@ -1,0 +1,50 @@
+.statistics-container {
+    background: var(--white);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.graph-container {
+    margin-bottom: 20px;
+}
+
+.graph {
+    width: 100%;
+    height: 400px;
+    background: #f5f5f5;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+.year-control {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+.year-control button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+}
+
+.year-control span {
+    font-size: 1rem;
+    color: var(--text-secondary);
+}
+
+.statistics-summary {
+    padding: 20px;
+    border-top: 1px solid var(--border);
+}
+
+.statistics-summary p {
+    margin: 10px 0;
+    color: var(--text-secondary);
+    font-size: 1rem;
+} 

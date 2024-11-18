@@ -1,0 +1,59 @@
+.career-container {
+    padding: 40px;
+    margin-top: 70px;
+}
+
+.career-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.career-header h1 {
+    font-size: 2.5rem;
+    color: var(--text-primary);
+    margin-bottom: 10px;
+}
+
+.positions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 20px;
+}
+
+.position-card {
+    background: var(--white);
+    border-radius: 8px;
+    padding: 25px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.position-details {
+    display: flex;
+    gap: 15px;
+    margin: 15px 0;
+    flex-wrap: wrap;
+}
+
+.position-details span {
+    background: #EDF2F7;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 0.9em;
+    color: var(--text-secondary);
+}
+
+.apply-button {
+    background: var(--primary-light);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    margin-top: 15px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.apply-button:hover {
+    background: #2C5282;
+} 
