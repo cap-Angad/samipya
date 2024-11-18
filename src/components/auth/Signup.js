@@ -103,12 +103,11 @@ const Signup = () => {
                     </div>
 
                     <div className="form-group full-width">
-                        <label>Landmarks</label>
+                        <label>Landmarks (optional)</label>
                         <input
                             type="text"
                             value={formData.landmarks}
                             onChange={(e) => setFormData({...formData, landmarks: e.target.value})}
-                            required
                         />
                     </div>
 
@@ -133,11 +132,10 @@ const Signup = () => {
                     </div>
 
                     <div className="form-group description">
-                        <label>Description</label>
+                        <label>Description (optional)</label>
                         <textarea
                             value={formData.description}
                             onChange={(e) => setFormData({...formData, description: e.target.value})}
-                            required
                         />
                     </div>
 

@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import './Auth.css';
+import { useAuth } from '../../context/AuthContext';
 
 const Login = () => {
     const navigate = useNavigate();
+    const { setUser } = useAuth();
     const [formData, setFormData] = useState({
         username: '',
         password: ''
@@ -25,6 +27,7 @@ const Login = () => {
             
             if (response.ok) {
                 localStorage.setItem('user', JSON.stringify(data.user));
+                setUser(data.user);
                 navigate('/');
             } else {
                 setError(data.message);

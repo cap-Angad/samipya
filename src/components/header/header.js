@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
+import { useAuth } from '../../context/AuthContext';
 
 const Header = () => {
+    const { user } = useAuth();
+
     return (
         <nav className="top-nav">
             <div className="logo">
@@ -26,15 +29,17 @@ const Header = () => {
                 </Link>
             </div>
             
-            <Link to="/profile" className="seller-profile">
-                <span style={{color: "black"}}>{JSON.parse(localStorage.getItem('user'))?.username || "Login"}</span>
-                <div className="profile-icon-wrapper">
-                    <img src={JSON.parse(localStorage.getItem('user'))?.profileImage || "/images/default-profile.jpg"} alt="Profile" className="profile-icon" />
-                </div>
-            </Link>
+            {user && (
+                <Link to="/profile" className="seller-profile">
+                    <span style={{color: "black"}}>{user.username}</span>
+                    <div className="profile-icon-wrapper">
+                        <img src={user.profileImage || "/images/default-profile.jpg"} alt="Profile" className="profile-icon" />
+                    </div>
+                </Link>
+            )}
         </nav>
     );
-}
+};
 
 export default Header;
 
